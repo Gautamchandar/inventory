@@ -1,11 +1,10 @@
 'use client';
 
 import React from 'react';
-import { 
-  LayoutDashboard, 
-  Package, 
-  Layers, 
-  Users, 
+import {
+  LayoutDashboard,
+  Layers,
+  Users,
   Sparkles,
   RefreshCw,
   LogOut
@@ -36,12 +35,12 @@ export const Sidebar: React.FC<SidebarProps> = ({
   ];
 
   return (
-    <aside className="w-64 bg-slate-900 text-white min-h-screen flex flex-col justify-between shrink-0 shadow-xl z-30">
+    <aside className="w-full lg:w-64 h-full overflow-y-auto bg-slate-900 text-white flex flex-col justify-between shadow-xl">
       <div>
         {/* Logo Header */}
         <div className="p-6 flex items-center gap-3 border-b border-slate-800">
           <div className="h-10 w-10 rounded-xl bg-blue-600 text-white flex items-center justify-center shadow-lg font-bold">
-            <Sparkles className="h-5.5 w-5.5" />
+            <Sparkles className="h-5 w-5" />
           </div>
           <div>
             <h1 className="text-lg font-extrabold tracking-tight text-white leading-tight">
@@ -60,13 +59,13 @@ export const Sidebar: React.FC<SidebarProps> = ({
               <button
                 key={item.id}
                 onClick={() => setActiveTab(item.id)}
-                className={`w-full flex items-center gap-3.5 px-4 py-3 rounded-xl text-xs font-bold transition ${
+                className={`w-full flex items-center gap-3.5 px-4 py-3 rounded-xl text-xs font-bold transition text-left ${
                   isActive
                     ? 'bg-blue-600 text-white shadow-md shadow-blue-900/50'
                     : 'text-slate-300 hover:bg-slate-800 hover:text-white'
                 }`}
               >
-                <Icon className={`h-4.5 w-4.5 ${isActive ? 'text-white' : 'text-slate-400'}`} />
+                <Icon className={`h-5 w-5 shrink-0 ${isActive ? 'text-white' : 'text-slate-400'}`} />
                 <span>{item.label}</span>
               </button>
             );
